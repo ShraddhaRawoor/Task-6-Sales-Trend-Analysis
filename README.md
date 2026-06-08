@@ -54,6 +54,13 @@ The Amount column was stored as NVARCHAR. To perform revenue calculations, TRY_C
 
 Successfully analyzed monthly sales trends, calculated revenue, measured order volume, and identified top-performing months using SQL aggregation techniques.
 
+## Key Findings
+
+- April 2022 generated the highest revenue.
+- Monthly revenue and order volume trends were identified using SQL aggregation functions.
+- Data type conversion was required because the Amount column was stored as NVARCHAR.
+- Revenue calculations were successfully performed using TRY_CAST().
+
 ## Outcome
 
 Learned how to:
@@ -64,3 +71,4 @@ Learned how to:
 * Count unique orders
 * Sort and analyze time-based sales trends
 * Handle data type conversion issues in SQL
+  
