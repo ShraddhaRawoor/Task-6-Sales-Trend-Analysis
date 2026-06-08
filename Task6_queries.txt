@@ -1,0 +1,51 @@
+Query 1
+
+SELECT TOP 10 *
+FROM AmazonSales;
+
+
+
+Query 2
+
+SELECT
+    YEAR([Date]) AS Year,
+    MONTH([Date]) AS Month,
+    SUM(TRY_CAST(Amount AS DECIMAL(10,2))) AS Revenue,
+    COUNT(DISTINCT Order_ID) AS Order_Volume
+FROM AmazonSales
+GROUP BY
+    YEAR([Date]),
+    MONTH([Date])
+ORDER BY
+    Year,
+    Month;
+
+
+Query 3
+
+SELECT TOP 3
+    YEAR([Date]) AS Year,
+    MONTH([Date]) AS Month,
+    SUM(TRY_CAST(Amount AS DECIMAL(10,2))) AS Revenue
+FROM AmazonSales
+GROUP BY
+    YEAR([Date]),
+    MONTH([Date])
+ORDER BY Revenue DESC;
+
+
+Query 4
+
+SELECT
+    YEAR([Date]) AS Year,
+    MONTH([Date]) AS Month,
+    SUM(TRY_CAST(Amount AS DECIMAL(10,2))) AS Revenue,
+    COUNT(DISTINCT Order_ID) AS Order_Volume
+FROM AmazonSales
+WHERE MONTH([Date]) IN (4,5)
+GROUP BY
+    YEAR([Date]),
+    MONTH([Date])
+ORDER BY
+    Year,
+    Month;
